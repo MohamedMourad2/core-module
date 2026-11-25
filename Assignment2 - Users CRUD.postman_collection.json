@@ -1,0 +1,213 @@
+{
+  "info": {
+    "_postman_id": "7271c0c0-8724-479d-bb42-bc0fda5611f9",
+    "name": "Assignment2 - Users CRUD",
+    "description": "Node.js Assignment 2 - Simple CRUD operations using HTTP and fs (users.json)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "60407766",
+    "_collection_link": "https://go.postman.co/collection/60407766-7271c0c0-8724-479d-bb42-bc0fda5611f9?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Add User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"User 1\",\n  \"age\": 27,\n  \"email\": \"user@email.com\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/user",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add User - Email Already Exists",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"User 2\",\n  \"age\": 30,\n  \"email\": \"user@email.com\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/user",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/user",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/user/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User By ID",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 30\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/user/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update User - ID Not Found",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"age\": 30\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/user/99",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "99"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get User - ID Not Found",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/user/99",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "99"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User By ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/user/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete User - ID Not Found",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/user/99",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "user",
+            "99"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
